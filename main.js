@@ -44,6 +44,10 @@ function getQuestionFromList(theList) {
 	return theList[index];
 }
 
+function getRandomInteger(ceiling) {
+	return Math.floor(Math.random() * ceiling + 1);
+}
+
 function showNextProblem() {
 	var problemText;
 	var previousProblem = currentProblem;
