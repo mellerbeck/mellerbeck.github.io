@@ -200,7 +200,7 @@ var samples = {
 		{key:'blanco', value:'white'},
 		{key:'boca', value:'mouth'},
 		{key:'cabeza', value:'head'}
-	]
+	],
 	
 	AmeliaAddition: [
 		{key:'oneplusone', value:'two'},
