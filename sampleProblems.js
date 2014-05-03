@@ -203,7 +203,7 @@ var samples = {
 	]
 	
 	AmeliaAddition: [
-		{key:'one plus one', value:'two'},
-		{key:'two plus two', value:'four'}
+		{key:'oneplusone', value:'two'},
+		{key:'twoplustwo', value:'four'}
 	]
 };
