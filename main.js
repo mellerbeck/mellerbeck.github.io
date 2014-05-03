@@ -123,7 +123,7 @@ function showNextProblem() {
 				currentProblem = getQuestionFromList(samples.spanishWords);
 				problemText = currentProblem.key;
 				break;
-      case 'builtin-spanish':
+      case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
       break;
