@@ -1,56 +1,5 @@
 var samples = {
-	capitals: [
-		{key:'Alabama', value: 'Montgomery'},
-		{key:'Alaska', value: 'Juneau'},
-		{key:'Arizona', value: 'Phoenix'},
-		{key:'Arkansas', value: 'Little Rock'},
-		{key:'California', value: 'Sacramento'},
-		{key:'Colorado', value: 'Denver'},
-		{key:'Connecticut', value: 'Hartford'},
-		{key:'Delaware', value: 'Dover'},
-		{key:'Florida', value: 'Tallahassee'},
-		{key:'Georgia', value: 'Atlanta'},
-		{key:'Hawaii', value: 'Honolulu'},
-		{key:'Idaho', value: 'Boise'},
-		{key:'Illinois', value: 'Springfield'},
-		{key:'Indiana', value: 'Indianapolis'},
-		{key:'Iowa', value: 'Des Moines'},
-		{key:'Kansas', value: 'Topeka'},
-		{key:'Kentucky', value: 'Frankfort'},
-		{key:'Louisiana', value: 'Baton Rouge'},
-		{key:'Maine', value: 'Augusta'},
-		{key:'Maryland', value: 'Annapolis'},
-		{key:'Massachusetts', value: 'Boston'},
-		{key:'Michigan', value: 'Lansing'},
-		{key:'Minnesota', value: 'Saint Paul'},
-		{key:'Mississippi', value: 'Jackson'},
-		{key:'Missouri', value: 'Jefferson City'},
-		{key:'Montana', value: 'Helena'},
-		{key:'Nebraska', value: 'Lincoln'},
-		{key:'Nevada', value: 'Carson City'},
-		{key:'New Hampshire', value: 'Concord'},
-		{key:'New Jersey', value:'Trenton'},
-		{key:'New Mexico', value: 'Santa Fe'},
-		{key:'New York', value: 'Albany'},
-		{key:'North Carolina', value: 'Raleigh'},
-		{key:'North Dakota', value: 'Bismarck'},
-		{key:'Ohio', value: 'Columbus'},
-		{key:'Oklahoma', value: 'Oklahoma City'},
-		{key:'Oregon', value: 'Salem'},
-		{key:'Pennsylvania', value: 'Harrisburg'},
-		{key:'Rhode Island', value: 'Providence'},
-		{key:'South Carolina', value: 'Columbia'},
-		{key:'South Dakota', value:	'Pierre'},
-		{key:'Tennessee', value: 'Nashville'},
-		{key:'Texas', value: 'Austin'},
-		{key:'Utah', value: 'Salt Lake City'},
-		{key:'Vermont', value: 'Montpelier'},
-		{key:'Virginia', value: 'Richmond'},
-		{key:'Washington', value: 'Olympia'},
-		{key:'West Virginia', value: 'Charleston'},
-		{key:'Wisconsin', value: 'Madison'},
-		{key:'Wyoming', value: 'Cheyenne'}
-	],
+	
 
 	chemSymbols: [
 		{key:'Ac', value: 'Actinium'},
@@ -203,7 +152,7 @@ var samples = {
 	],
 	
 	AmeliaAddition: [
-		{key:'oneplusone', value:'two'},
-		{key:'twoplustwo', value:'four'}
+		{key:'one plus one', value:'2'},
+		{key:'two plus two', value:'4'}
 	]
 };
