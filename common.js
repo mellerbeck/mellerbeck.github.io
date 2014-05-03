@@ -53,6 +53,10 @@ var common = {
 					displayName: 'Chemical Symbols'
 				},
 				{
+					name: 'builtin-AmeliaAddition',
+					displayName: 'Amelia Addition'
+				},
+				{
 					name: 'builtin-spanish',
 					displayName: 'Spanish Vocabulary'
 				}

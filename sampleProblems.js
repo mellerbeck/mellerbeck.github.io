@@ -201,4 +201,9 @@ var samples = {
 		{key:'boca', value:'mouth'},
 		{key:'cabeza', value:'head'}
 	]
+	
+	AmeliaAddition: [
+		{key:'one plus one', value:'two'},
+		{key:'two plus two', value:'four'}
+	]
 };

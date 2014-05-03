@@ -123,6 +123,10 @@ function showNextProblem() {
 				currentProblem = getQuestionFromList(samples.spanishWords);
 				problemText = currentProblem.key;
 				break;
+      case 'builtin-spanish':
+				currentProblem = getQuestionFromList(samples.AmeliaAddition);
+				problemText = currentProblem.key;
+      break;
 			default:
 				currentProblem = getQuestionFromList(window.problemsForSelectedCategory);
 				problemText = currentProblem.key;
