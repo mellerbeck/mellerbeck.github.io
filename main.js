@@ -44,52 +44,6 @@ function getQuestionFromList(theList) {
 	return theList[index];
 }
 
-function generateAdditionProblem() {
-	var first = getRandomInteger(10);
-	var second = getRandomInteger(10);
-	return {
-		firstNumber: first,
-		secondNumber: second,
-		value: first + second
-	};
-}
-
-function generateSubtractionProblem() {
-	var prob = generateAdditionProblem();
-	var first = prob.value;
-	var second = prob.firstNumber;
-	return {
-		firstNumber: first,
-		secondNumber: second,
-		value: prob.secondNumber
-	};
-}
-
-function generateMultiplicationProblem() {
-	var first = getRandomInteger(10);
-	var second = getRandomInteger(10);
-	return {
-		firstNumber: first,
-		secondNumber: second,
-		value: first * second
-	};
-}
-
-function generateDivisionProblem() {
-	var prob = generateMultiplicationProblem();
-	var first = prob.value;
-	var second = prob.firstNumber;
-	return {
-		firstNumber: first,
-		secondNumber: second,
-		value: prob.secondNumber
-	};
-}
-
-function getRandomInteger(ceiling) {
-	return Math.floor(Math.random() * ceiling + 1);
-}
-
 function showNextProblem() {
 	var problemText;
 	var previousProblem = currentProblem;
