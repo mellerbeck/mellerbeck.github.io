@@ -29,37 +29,10 @@ var common = {
 		else {
 			categories = [
 				{
-					name: 'builtin-addition',
-					displayName: 'Addition'
-				},
-				{
-					name: 'builtin-subtraction',
-					displayName: 'Subtraction'
-				},
-				{
-					name: 'builtin-multiplication',
-					displayName: 'Multiplication'
-				},
-				{
-					name: 'builtin-division',
-					displayName: 'Division'
-				},
-				{
-					name: 'builtin-capitals',
-					displayName: 'US State Capitals'
-				},
-				{
-					name: 'builtin-chemSymbols',
-					displayName: 'Chemical Symbols'
-				},
-				{
 					name: 'builtin-AmeliaAddition',
 					displayName: 'Amelia Addition'
-				},
-				{
-					name: 'builtin-spanish',
-					displayName: 'Spanish Vocabulary'
 				}
+				
 			];
 		}
 

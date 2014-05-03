@@ -12,7 +12,7 @@ var timerCtx = document.getElementById('cnvTimer').getContext('2d');
 var timerCanvasHeight = document.getElementById('cnvTimer').height;
 var beginTime;
 var errorOccurred = false;
-var selectedCategory = 'builtin-addition';
+var selectedCategory = 'builtin-AmeliaAddition';
 var problemsForSelectedCategory;
 var selectedLanguage = navigator.language;
 
@@ -95,35 +95,7 @@ function showNextProblem() {
 	var previousProblem = currentProblem;
 	while (previousProblem === currentProblem) {
 		switch (selectedCategory) {
-			case 'builtin-addition':
-				currentProblem = generateAdditionProblem();
-				problemText = currentProblem.firstNumber + ' + ' + currentProblem.secondNumber;
-				break;
-			case 'builtin-subtraction':
-				currentProblem = generateSubtractionProblem();
-				problemText = currentProblem.firstNumber + ' - ' + currentProblem.secondNumber;
-				break;
-			case 'builtin-multiplication':
-				currentProblem = generateMultiplicationProblem();
-				problemText = currentProblem.firstNumber + ' x ' + currentProblem.secondNumber;
-				break;
-			case 'builtin-division':
-				currentProblem = generateDivisionProblem();
-				problemText = currentProblem.firstNumber + ' / ' + currentProblem.secondNumber;
-				break;
-			case 'builtin-capitals':
-				currentProblem = getQuestionFromList(samples.capitals);
-				problemText = currentProblem.key;
-				break;
-			case 'builtin-chemSymbols':
-				currentProblem = getQuestionFromList(samples.chemSymbols);
-				problemText = currentProblem.key;
-				break;
-			case 'builtin-spanish':
-				currentProblem = getQuestionFromList(samples.spanishWords);
-				problemText = currentProblem.key;
-				break;
-      case 'builtin-AmeliaAddition':
+			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
       break;
