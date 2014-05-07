@@ -1,6 +1,6 @@
 var samples = {
 	AmeliaAddition: [
-		{key:'one plus one', value:'2'},
-		{key:'two plus two', value:'4'}
+		{key:'1 + 1', value:'2', altval1:'cat'},
+		{key:'2 + 2', value:'4', altval1:'door'}
 	]
 };

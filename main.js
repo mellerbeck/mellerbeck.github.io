@@ -159,12 +159,14 @@ function startSpeechRecognition() {
 function checkAnswer(guess) {
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
+	var altval1 = currentProblem.altval1;
 	if (typeof answer === 'string') {
 		answer = answer.toLowerCase();
 	}
 
 
-	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
+	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0
+	    || trimmedGuess.indexOf(altval1) >= 0) {
 		showNextProblem();
 	}
 
