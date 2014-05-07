@@ -80,6 +80,7 @@ function startSpeechRecognition() {
 		}, 60000);
 
 		document.getElementsByClassName('scores')[0].classList.remove('hidden');
+		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
