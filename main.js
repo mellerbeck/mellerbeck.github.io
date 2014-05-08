@@ -17,28 +17,7 @@ var selectedCategory = 'builtin-AmeliaAddition';
 var problemsForSelectedCategory;
 var selectedLanguage = navigator.language;
 
-function selectLanguage(newValue) {
-	var dropdown = document.getElementsByClassName('languageSelector')[0];
-    for(var i = 0; i < dropdown.options.length; i++) {
-        if(dropdown.options[i].value === newValue) {
-           dropdown.selectedIndex = i;
-           return;
-        }
-    }
 
-    if (newValue.length === 2) {
-		for(i = 0; i < dropdown.options.length; i++) {
-			if(dropdown.options[i].value.substring(0, 2) === newValue) {
-				dropdown.selectedIndex = i;
-				return;
-			}
-		}
-    }
-
-    // Default to US english if not found
-    selectedLanguage = 'en-US';
-    selectLanguage(selectedLanguage);
-}
 
 function getQuestionFromList(theList) {
 	var index = getRandomInteger(theList.length) - 1;
@@ -72,7 +51,7 @@ function startSpeechRecognition() {
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
 	speech.interimResults = true;
-	speech.lang = selectedLanguage;
+	speech.lang = 'en-NZ';
 	speech.onstart = function() {
 		
 		if (scoreLoopCounter == -1) {
@@ -176,7 +155,7 @@ function switchToSecondInstructions() {
 detectIfSpeechSupported();
 common.renderCategories();
 
-selectLanguage(selectedLanguage);
+
 
 setTimeout(function() {
 	document.getElementsByClassName('leftArrow')[0].style['margin-left'] ='0';
@@ -196,9 +175,6 @@ startButton.addEventListener('click', function() {
 	startSpeechRecognition();
 });
 
-var languageSelector = document.getElementsByClassName('languageSelector')[0];
-languageSelector.addEventListener('change', function() {
-	selectedLanguage = languageSelector.options[languageSelector.selectedIndex].value;
-});
+
 
 
