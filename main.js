@@ -105,6 +105,11 @@ function startSpeechRecognition() {
 	speech.start();
 }
 
+// keep it listening
+speech.onend = function(){
+    speech.start();
+}
+
 function checkAnswer(guess) {
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
