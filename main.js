@@ -75,6 +75,11 @@ function startSpeechRecognition() {
 	speech.lang = selectedLanguage;
 	speech.onstart = function() {
 		
+		setTimeout(function() {
+			;
+		}, 1160000);
+
+		
     document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
@@ -204,4 +209,4 @@ languageSelector.addEventListener('change', function() {
 	selectedLanguage = languageSelector.options[languageSelector.selectedIndex].value;
 });
 
-var doneSound = new Audio('done.mp3');
+
