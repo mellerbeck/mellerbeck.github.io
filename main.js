@@ -75,9 +75,9 @@ function startSpeechRecognition() {
 	speech.lang = selectedLanguage;
 	speech.onstart = function() {
 		// Run for 60 seconds and stop
-		setTimeout(function() {
-			speech.stop();
-		}, 60000);
+		//setTimeout(function() {
+		//	speech.stop();
+		//}, 60000);
 
 		document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
