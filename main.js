@@ -7,6 +7,7 @@ var SpeechRecognition = window.mozSpeechRecognition ||
 
 var currentProblem;
 var currentScore = 0;
+var scoreLoopCounter = -1;
 var highScore = 0;
 var timerCtx = document.getElementById('cnvTimer').getContext('2d');
 var timerCanvasHeight = document.getElementById('cnvTimer').height;
@@ -68,26 +69,32 @@ function showNextProblem() {
 
 function startSpeechRecognition() {
 	
-	var timer;
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
 	speech.interimResults = true;
 	speech.lang = selectedLanguage;
 	speech.onstart = function() {
 		
+		if (scoreLoopCounter == -1) {
 		document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
 		document.getElementById('audiotag1').play();
-
+		scoreLoopCounter = 0;
+    }
+    
 		errorOccurred = false;
 		currentScore = 0;
 		document.getElementById('currentScoreValue').textContent = currentScore;
 		
 		// Show the first question
+		
+		if(currentScore !== scoreLoopCounter){
 		showNextProblem();
+		}
+		
 	};
 
   speech.onresult = function(event) {
