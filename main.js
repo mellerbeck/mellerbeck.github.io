@@ -84,6 +84,7 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
+		document.getElementById('audiotag1').play();
 
 		errorOccurred = false;
 		currentScore = 0;
@@ -260,7 +261,7 @@ startButton.addEventListener('click', function() {
 		window.alert('Please choose a category');
 		return ;
 	}
-
+  
 	startSpeechRecognition();
 });
 
