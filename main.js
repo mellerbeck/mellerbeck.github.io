@@ -75,12 +75,7 @@ function startSpeechRecognition() {
 	speech.lang = selectedLanguage;
 	speech.onstart = function() {
 		
-		setTimeout(function() {
-			;
-		}, 1160000);
-
-		
-    document.getElementsByClassName('scores')[0].classList.remove('hidden');
+		document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
@@ -95,25 +90,7 @@ function startSpeechRecognition() {
 		showNextProblem();
 	};
 
-
-	speech.onend = function() {
-		
-    var previousHigh = common.getHighScoreFor(selectedCategory);
-		if (previousHigh < currentScore) {
-			common.setHighScoreFor(selectedCategory, currentScore);
-			common.renderCategories();
-			document.getElementById('highScoreValue').innerHTML = currentScore;
-		}
-
-		var highlighted = document.getElementsByClassName('highlight');
-		for (var i = 0; i < highlighted.length; i++) {
-			highlighted[i].classList.remove('highlight');
-		}
-	};
-
-	speech.onerror = speech.onend;
-
-	speech.onresult = function(event) {
+  speech.onresult = function(event) {
 		var iHeard = '';
 
 		for (var i = event.resultIndex; i < event.results.length; i++) {
