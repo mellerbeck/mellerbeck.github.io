@@ -82,6 +82,7 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
 		document.getElementById('audiotag1').play();
+		showNextProblem();
 		scoreLoopCounter = 0;
     }
     
