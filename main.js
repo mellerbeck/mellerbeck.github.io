@@ -67,19 +67,15 @@ function showNextProblem() {
 }
 
 function startSpeechRecognition() {
-	var currentTime = 60;
+	
 	var timer;
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
 	speech.interimResults = true;
 	speech.lang = selectedLanguage;
 	speech.onstart = function() {
-		// Run for 60 seconds and stop
-		//setTimeout(function() {
-		//	speech.stop();
-		//}, 60000);
-
-		document.getElementsByClassName('scores')[0].classList.remove('hidden');
+		
+    document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
@@ -96,16 +92,8 @@ function startSpeechRecognition() {
 
 
 	speech.onend = function() {
-		currentTime = 60;
-		clearInterval(timer);
-		var timeRemaining = document.getElementsByClassName('timeRemaining')[0];
-		timeRemaining.textContent = '1:00';
-		timeRemaining.classList.add('expired');
-		doneSound.play();
-		errorOccurred = true;
-		startButton.textContent = 'Restart';
-
-		var previousHigh = common.getHighScoreFor(selectedCategory);
+		
+    var previousHigh = common.getHighScoreFor(selectedCategory);
 		if (previousHigh < currentScore) {
 			common.setHighScoreFor(selectedCategory, currentScore);
 			common.renderCategories();
