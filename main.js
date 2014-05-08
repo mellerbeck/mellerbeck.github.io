@@ -96,22 +96,7 @@ function startSpeechRecognition() {
 		timeRemaining.textContent = '1:00';
 		timeRemaining.classList.remove('expired');
 
-		timer = setInterval(function() {
-			var timeToShow = '';
-			if (currentTime > 59) {
-				timeToShow = '1:00';
-			}
-			if (currentTime < 10) {
-				timeToShow = '0:0' + currentTime;
-			}
-			else {
-				timeToShow = '0:' + currentTime;
-			}
-
-			currentTime--;
-
-			timeRemaining.textContent = timeToShow;
-		}, 1000);
+		
 
 		// Show the first question
 		showNextProblem();
