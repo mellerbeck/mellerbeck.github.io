@@ -89,15 +89,7 @@ function startSpeechRecognition() {
 		errorOccurred = false;
 		currentScore = 0;
 		document.getElementById('currentScoreValue').textContent = currentScore;
-		beginTime = new Date().getTime();
-		window.requestAnimationFrame(updateTimer);
-
-		var timeRemaining = document.getElementsByClassName('timeRemaining')[0];
-		timeRemaining.textContent = '1:00';
-		timeRemaining.classList.remove('expired');
-
 		
-
 		// Show the first question
 		showNextProblem();
 	};
@@ -175,37 +167,6 @@ function setIHeardText(textToDisplay) {
 	document.getElementById('iHeardText').textContent = textToDisplay;
 }
 
-function paintTimer(percent) {
-	timerCtx.clearRect(0, 0, 1000, 1000);
-	var radiusToUse = (timerCanvasHeight / 2) - 5;
-	var grd = timerCtx.createRadialGradient(radiusToUse + 5,radiusToUse + 5, (radiusToUse - 15), radiusToUse - 5, radiusToUse - 5,(radiusToUse) + 10);
-	grd.addColorStop(0,'rgb(' + Math.ceil(255 - (255 * percent)) + ', ' + Math.ceil(255 * percent) + ', 0)');
-	grd.addColorStop(1,"black");
-
-	// Fill with gradient
-	timerCtx.fillStyle = grd;
-	timerCtx.lineWidth = 4;
-	timerCtx.beginPath();
-	timerCtx.arc(radiusToUse + 5, radiusToUse + 5, radiusToUse, Math.PI * 3 / 2, Math.PI * 2 * percent - (Math.PI / 2), false);
-	timerCtx.lineTo(radiusToUse + 5, radiusToUse + 5);
-	timerCtx.closePath();
-	timerCtx.stroke();
-	timerCtx.fill();
-}
-
-function updateTimer() {
-	if (errorOccurred) {
-		return;
-	}
-
-	var now = new Date().getTime();
-	var percent = (now - beginTime) / 60000;
-	paintTimer(1 - percent);
-	if (percent < 1) {
-		window.requestAnimationFrame(updateTimer);
-	}
-}
-
 function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
@@ -229,7 +190,7 @@ function switchToSecondInstructions() {
 
 detectIfSpeechSupported();
 common.renderCategories();
-paintTimer(0.99999);
+
 selectLanguage(selectedLanguage);
 
 setTimeout(function() {
