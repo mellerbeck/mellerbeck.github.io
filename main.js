@@ -101,14 +101,16 @@ function startSpeechRecognition() {
 		setIHeardText(iHeard);
 		checkAnswer(iHeard);
 	};
+	
+	// keep it listening
+    speech.onend = function(){
+      speech.start();
+    }
 
 	speech.start();
 }
 
-// keep it listening
-speech.onend = function(){
-    speech.start();
-}
+
 
 function checkAnswer(guess) {
 	var trimmedGuess = guess.trim().toLowerCase();
