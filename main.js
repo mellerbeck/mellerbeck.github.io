@@ -119,29 +119,29 @@ function checkAnswer(guess) {
 		answer = answer.toLowerCase();
 	}
 
-  if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0
+  if ( trimmedGuess.indexOf(answer) >= 0
 	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
 	    || trimmedGuess.indexOf(altval3) >= 0) {
 	    
 	    // say you're right
 	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	    snd.addEventListener('ended', showNextProblem);
       snd.play();
 	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       window.speechSynthesis.speak(msg);
-      showNextProblem();
+      
+      currentScore++;
+      var scoreElement = document.getElementById('currentScoreValue');
+      scoreElement.textContent = currentScore;
+
+      if (currentScore > highScore) {
+        scoreElement.classList.add('highlight');
+      }
+      
+      
 	    
-	}
-
-	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
-	  || trimmedGuess.indexOf(altval2) >= 0 || trimmedGuess.indexOf(altval3) >= 0) {
-		currentScore++;
-		var scoreElement = document.getElementById('currentScoreValue');
-		scoreElement.textContent = currentScore;
-
-		if (currentScore > highScore) {
-			scoreElement.classList.add('highlight');
-		}
-	}
+    }
+  }
 }
 
 function setIHeardText(textToDisplay) {
