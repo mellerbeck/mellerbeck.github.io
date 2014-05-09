@@ -151,6 +151,20 @@ function detectIfSpeechSupported() {
 	warningsElement.innerHTML = supportMessage;
 }
 
+function detectIfVoiceSyntheseSupported() {
+	var supportMessage;
+	var warningsElement = document.getElementsByClassName('warnings')[0];
+	if ('speechSynthesis' in window) {
+    // You're good to go!
+  } else {
+    warningsElement.classList.add('unsupported');
+		supportMessage = "Sorry... Your browser doesn't support speech recognition yet.  Try Google Chrome version 33.";
+	}
+	warningsElement.innerHTML = supportMessage;
+}
+
+
+
 function switchToSecondInstructions() {
 	var first = document.getElementById('firstInstructions');
 	if (first.style.display !== 'none') {
