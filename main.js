@@ -128,7 +128,7 @@ function checkAnswer(guess) {
       msg = new SpeechSynthesisUtterance('OK');
       window.speechSynthesis.speak(msg);
 	    // delay the next problem showing
-	    window.setTimeout(showNextProblem(),8000);
+	    window.setTimeout(showNextProblem,8000);
 		  //showNextProblem();
 	}
 
