@@ -61,17 +61,10 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
-<<<<<<< HEAD
+
 		var msg = new SpeechSynthesisUtterance('Hi Amelia!);
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn game?);
-    window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('OK');
-    window.speechSynthesis.speak(msg);
-=======
-		document.getElementById('audiotag1').play();
->>>>>>> parent of 1f82fa8... try speech synthesis
-		showNextProblem();
+    showNextProblem();
 		scoreLoopCounter = 0;
     }
     
