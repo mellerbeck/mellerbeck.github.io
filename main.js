@@ -60,7 +60,11 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
-		var msg = new SpeechSynthesisUtterance('Hi Amelia, are you ready to play the unicorn game?');
+		var msg = new SpeechSynthesisUtterance('Hi Amelia!);
+    window.speechSynthesis.speak(msg);
+    var msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn game?);
+    window.speechSynthesis.speak(msg);
+    var msg = new SpeechSynthesisUtterance('OK');
     window.speechSynthesis.speak(msg);
 		showNextProblem();
 		scoreLoopCounter = 0;
