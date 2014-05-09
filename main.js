@@ -36,6 +36,8 @@ function showNextProblem() {
 			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
+				msg = new SpeechSynthesisUtterance('OK, whats');
+        window.speechSynthesis.speak(msg);
 				var msg = new SpeechSynthesisUtterance(problemText);
         window.speechSynthesis.speak(msg);
       break;
@@ -66,8 +68,7 @@ function startSpeechRecognition() {
     window.speechSynthesis.speak(msg);
     msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('OK, whats');
-    window.speechSynthesis.speak(msg);
+    
     showNextProblem();
 		scoreLoopCounter = 0;
     }
@@ -143,9 +144,7 @@ function checkAnswer(guess) {
 
 function pauseForNext(){
     return function(){
-      var msg = new SpeechSynthesisUtterance('OK');
-      window.speechSynthesis.speak(msg);
-    	showNextProblem;
+      showNextProblem();
     }
 }
 
