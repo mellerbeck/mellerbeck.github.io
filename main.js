@@ -114,16 +114,18 @@ function checkAnswer(guess) {
 	// with unclear speech
 	var altval1 = currentProblem.altval1;
 	var altval2 = currentProblem.altval2;
+	var altval3 = currentProblem.altval3;
 	if (typeof answer === 'string') {
 		answer = answer.toLowerCase();
 	}
 
-
-	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0
+  if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0
 	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
 	    || trimmedGuess.indexOf(altval3) >= 0) {
 	    
 	    // say you're right
+	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+      snd.play();
 	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       window.speechSynthesis.speak(msg);
       showNextProblem();
