@@ -64,7 +64,9 @@ function startSpeechRecognition() {
 		document.getElementById('secondInstructions').style.display = '';
     var msg = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn game?');
+    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
+    window.speechSynthesis.speak(msg);
+    msg = new SpeechSynthesisUtterance('OK, what is');
     window.speechSynthesis.speak(msg);
     showNextProblem();
 		scoreLoopCounter = 0;
