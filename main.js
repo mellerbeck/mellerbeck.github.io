@@ -60,7 +60,8 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
-		document.getElementById('audiotag1').play();
+		var msg = new SpeechSynthesisUtterance('Hello World');
+    window.speechSynthesis.speak(msg);
 		showNextProblem();
 		scoreLoopCounter = 0;
     }
