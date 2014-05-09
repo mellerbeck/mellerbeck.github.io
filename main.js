@@ -66,7 +66,7 @@ function startSpeechRecognition() {
 		document.getElementById('secondInstructions').style.display = '';
     var msg = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
+    msg = new SpeechSynthesisUtterance('Are you ready to play the crazy crazy crazy math game?');
     window.speechSynthesis.speak(msg);
     
     showNextProblem();
@@ -131,6 +131,7 @@ function checkAnswer(guess) {
       window.speechSynthesis.speak(msg);
       
       currentScore++;
+      scoreLoopCounter++;
       var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
 
