@@ -66,7 +66,7 @@ function startSpeechRecognition() {
     window.speechSynthesis.speak(msg);
     msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('OK, what is');
+    msg = new SpeechSynthesisUtterance('OK, whats');
     window.speechSynthesis.speak(msg);
     showNextProblem();
 		scoreLoopCounter = 0;
