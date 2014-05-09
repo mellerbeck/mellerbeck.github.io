@@ -127,9 +127,7 @@ function checkAnswer(guess) {
       window.speechSynthesis.speak(msg);
       msg = new SpeechSynthesisUtterance('OK');
       window.speechSynthesis.speak(msg);
-	    // delay the next problem showing
-	    window.setTimeout(showNextProblem,8000);
-		  //showNextProblem();
+	    setTimeout(pauseForNext, 8000);
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
@@ -142,6 +140,12 @@ function checkAnswer(guess) {
 			scoreElement.classList.add('highlight');
 		}
 	}
+}
+
+function pauseForNext(){
+    return function(){
+    	showNextProblem;
+    }
 }
 
 function setIHeardText(textToDisplay) {
