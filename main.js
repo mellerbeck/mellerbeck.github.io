@@ -142,7 +142,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "Cool!  Your browser supports speech recognition.  Have fun!";
+		supportMessage = "Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -151,14 +151,14 @@ function detectIfSpeechSupported() {
 	warningsElement.innerHTML = supportMessage;
 }
 
-function detectIfVoiceSyntheseSupported() {
+function detectIfVoiceSynthesSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if ('speechSynthesis' in window) {
     // You're good to go!
   } else {
     warningsElement.classList.add('unsupported');
-		supportMessage = "Sorry... Your browser doesn't support speech recognition yet.  Try Google Chrome version 33.";
+		supportMessage = "Sorry... Your browser doesn't support speech synthesis yet.  Try Google Chrome version 33.";
 		warningsElement.innerHTML = supportMessage;
 	}	
 }
@@ -174,7 +174,7 @@ function switchToSecondInstructions() {
 }
 
 detectIfSpeechSupported();
-detectIfVoiceSyntheseSupported();
+detectIfVoiceSynthesSupported(); 
 common.renderCategories();
 
 
