@@ -123,11 +123,13 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0) {
 	    
 	    // say you're right
-	    msg = new SpeechSynthesisUtterance('Awesome! Ok');
+	    var msg = new SpeechSynthesisUtterance('Awesome!');
+      window.speechSynthesis.speak(msg);
+      msg = new SpeechSynthesisUtterance('OK');
       window.speechSynthesis.speak(msg);
 	    // delay the next problem showing
-	    
-		  showNextProblem();
+	    window.setTimeout(showNextProblem(),8000);
+		  //showNextProblem();
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
