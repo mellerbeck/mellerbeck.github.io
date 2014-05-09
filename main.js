@@ -126,9 +126,8 @@ function checkAnswer(guess) {
 	    msg = new SpeechSynthesisUtterance('Awesome! Ok');
       window.speechSynthesis.speak(msg);
 	    // delay the next problem showing
-	    var timeoutID;
-	    timeoutID = window.setTimeout(showNextProblem,5000);
-		  //showNextProblem();
+	    
+		  showNextProblem();
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
