@@ -123,11 +123,11 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0) {
 	    
 	    // say you're right
-	    msg = new SpeechSynthesisUtterance('Awesome!');
+	    msg = new SpeechSynthesisUtterance('Awesome! Ok');
       window.speechSynthesis.speak(msg);
 	    // delay the next problem showing
 	    var timeoutID;
-	    timeoutID = window.setTimeout(showNextProblem(),3000);
+	    timeoutID = window.setTimeout(showNextProblem,5000);
 		  //showNextProblem();
 	}
 
