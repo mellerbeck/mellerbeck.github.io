@@ -143,7 +143,7 @@ function checkAnswer(guess) {
 
 function pauseForNext(){
     return function(){
-      msg = new SpeechSynthesisUtterance('OK');
+      var msg = new SpeechSynthesisUtterance('OK');
       window.speechSynthesis.speak(msg);
     	showNextProblem;
     }
