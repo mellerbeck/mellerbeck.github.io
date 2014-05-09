@@ -159,8 +159,8 @@ function detectIfVoiceSyntheseSupported() {
   } else {
     warningsElement.classList.add('unsupported');
 		supportMessage = "Sorry... Your browser doesn't support speech recognition yet.  Try Google Chrome version 33.";
-	}
-	warningsElement.innerHTML = supportMessage;
+		warningsElement.innerHTML = supportMessage;
+	}	
 }
 
 
