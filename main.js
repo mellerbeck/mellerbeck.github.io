@@ -36,7 +36,8 @@ function showNextProblem() {
 			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
-				
+				var msg = new SpeechSynthesisUtterance('what is' + problemText);
+        window.speechSynthesis.speak(msg);
       break;
 			default:
 				currentProblem = getQuestionFromList(window.problemsForSelectedCategory);
@@ -63,7 +64,7 @@ function startSpeechRecognition() {
 		document.getElementById('secondInstructions').style.display = '';
     var msg = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msg);
-    var msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn game?');
+    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn game?');
     window.speechSynthesis.speak(msg);
     showNextProblem();
 		scoreLoopCounter = 0;
