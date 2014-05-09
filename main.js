@@ -126,8 +126,8 @@ function checkAnswer(guess) {
 	    // say you're right
 	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       window.speechSynthesis.speak(msg);
-      
-	    setTimeout(pauseForNext, 8000);
+      showNextProblem();
+	    
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
@@ -140,12 +140,6 @@ function checkAnswer(guess) {
 			scoreElement.classList.add('highlight');
 		}
 	}
-}
-
-function pauseForNext(){
-    return function(){
-      showNextProblem();
-    }
 }
 
 function setIHeardText(textToDisplay) {
