@@ -119,11 +119,19 @@ function checkAnswer(guess) {
 
 
 	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0
-	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0) {
-		showNextProblem();
+	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
+	    || trimmedGuess.indexOf(altval3) >= 0) {
+	    
+	    // say you're right
+	    
+	    // delay the next problem showing
+	    var timeoutID;
+	    timeoutID = window.setTimeout(showNextProblem(),3000);
+		  //showNextProblem();
 	}
 
-	if (trimmedGuess.indexOf(answer) >= 0) {
+	if (trimmedGuess.indexOf(answer) >= 0 || trimmedGuess.indexOf(altval1) >= 0 
+	  || trimmedGuess.indexOf(altval2) >= 0 || trimmedGuess.indexOf(altval3) >= 0) {
 		currentScore++;
 		var scoreElement = document.getElementById('currentScoreValue');
 		scoreElement.textContent = currentScore;
