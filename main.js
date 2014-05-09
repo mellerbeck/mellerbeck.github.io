@@ -36,6 +36,8 @@ function showNextProblem() {
 			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
+				var msg = new SpeechSynthesisUtterance(problemText);
+        window.speechSynthesis.speak(msg);
       break;
 			default:
 				currentProblem = getQuestionFromList(window.problemsForSelectedCategory);
