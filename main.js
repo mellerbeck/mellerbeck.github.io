@@ -174,6 +174,7 @@ function switchToSecondInstructions() {
 }
 
 detectIfSpeechSupported();
+detectIfVoiceSyntheseSupported();
 common.renderCategories();
 
 
