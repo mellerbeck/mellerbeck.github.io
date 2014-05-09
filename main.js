@@ -137,12 +137,8 @@ function checkAnswer(guess) {
       if (currentScore > highScore) {
         scoreElement.classList.add('highlight');
       }
-      
-      
-	    
     }
   }
-}
 
 function setIHeardText(textToDisplay) {
 	document.getElementById('iHeardText').textContent = textToDisplay;
