@@ -123,10 +123,9 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0) {
 	    
 	    // say you're right
-	    var msg = new SpeechSynthesisUtterance('Awesome!');
+	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       window.speechSynthesis.speak(msg);
-      msg = new SpeechSynthesisUtterance('OK');
-      window.speechSynthesis.speak(msg);
+      
 	    setTimeout(pauseForNext, 8000);
 	}
 
@@ -144,6 +143,8 @@ function checkAnswer(guess) {
 
 function pauseForNext(){
     return function(){
+      msg = new SpeechSynthesisUtterance('OK');
+      window.speechSynthesis.speak(msg);
     	showNextProblem;
     }
 }
