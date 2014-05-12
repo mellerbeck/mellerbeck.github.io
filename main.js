@@ -42,10 +42,10 @@ function showNextProblem() {
 				//msgProblem.text = problemText;
 				
 				// change the animated .gif to 'thinking'
-				msgProblem.onend = function (event) {
-          document.getElementById("unicornpic").src="UnicornThinking.gif";
-        };
-        window.speechSynthesis.speak(msgProblem);
+				//msgProblem.onend = function (event) {
+        //  document.getElementById("unicornpic").src="UnicornThinking.gif";
+        //};
+        //window.speechSynthesis.speak(msgProblem);
       
       break;
 			default:
