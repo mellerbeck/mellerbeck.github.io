@@ -62,7 +62,7 @@ function startSpeechRecognition() {
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
 	// speech.interimResults = true;
-	speech.lang = 'en';
+	speech.lang = 'en-US';
 	speech.onstart = function() {
 		
 		if (answeredCorrectly == -1) {
