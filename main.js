@@ -36,8 +36,13 @@ function showNextProblem() {
 				problemText = currentProblem.key;
 				msg = new SpeechSynthesisUtterance('OK, whats');
         window.speechSynthesis.speak(msg);
-				var msg = new SpeechSynthesisUtterance(problemText);
-        window.speechSynthesis.speak(msg);
+				var msgProblem = new SpeechSynthesisUtterance();
+				msgProblem.text = problemText;
+				// change the animated .gif to 'thinking'
+				msgProblem.onend = setUnicornThinking (event) {
+        }
+        window.speechSynthesis.speak(msgProblem);
+      
       break;
 			default:
 				currentProblem = getQuestionFromList(window.problemsForSelectedCategory);
@@ -67,10 +72,6 @@ function startSpeechRecognition() {
     
     var msgReady = new SpeechSynthesisUtterance();
     msgReady.text = 'Are you ready to play the unicorn math game?';
-    // change the animated .gif to 'thinking'
-    msgReady.onend = setUnicornThinking (event) {
-    }
-    
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
@@ -130,6 +131,10 @@ function checkAnswer(guess) {
   if ( trimmedGuess.indexOf(answer) >= 0
 	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
 	    || trimmedGuess.indexOf(altval3) >= 0) {
+	    
+	    
+	    console.log (trimmedGuess.indexOf(answer) + ' ' + trimmedGuess.indexOf(altval1) + ' ' +
+	    trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3); 
 	    
 	    // say you're right
 	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
