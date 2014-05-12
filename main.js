@@ -223,6 +223,7 @@ function startAnnyang() {
   annyang.addCommands(commands);
 
   // Start listening.
+  annyang.debug();d
   annyang.start();
   }
 }
