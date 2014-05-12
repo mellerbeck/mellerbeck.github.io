@@ -61,7 +61,7 @@ function startSpeechRecognition() {
 	
 	var final_transcript = '';
 	var speech = new SpeechRecognition();
-	speech.continuous = true;
+	//speech.continuous = true;
 	speech.interimResults = true;
 	speech.lang = 'en-US';
 	speech.onstart = function() {
@@ -94,7 +94,7 @@ function startSpeechRecognition() {
       if (event.results[i].isFinal) {
         final_transcript += event.results[i][0].transcript;
         } else {
-          interim_transcript += event.results[i][0].transcript;
+        interim_transcript += event.results[i][0].transcript;
         }
     }
     
@@ -169,7 +169,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.55 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.56 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
