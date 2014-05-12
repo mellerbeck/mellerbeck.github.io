@@ -99,11 +99,7 @@ function startSpeechRecognition() {
     }
     
     setIHeardText(interim_transcript);
-		answeredCorrectly = checkAnswer(final_transcript);
-		
-		if (answeredCorrectly) {
-		congratulate();
-		}
+		checkAnswer(final_transcript);
 		
 	};
 	
@@ -115,32 +111,31 @@ function startSpeechRecognition() {
 	speech.start();
 }
 
-function checkAnswer(guess) {
 
-  console.log (guess);
-  console.log ('you were here');
- 
-  var trimmedGuess = guess.trim().toLowerCase();
+function checkAnswer(guess) {
+	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
-	// add a couple of alternative answers to help out children
-	// with unclear speech
 	var altval1 = currentProblem.altval1;
-	var altval2 = currentProblem.altval2;
-	var altval3 = currentProblem.altval3;
 	if (typeof answer === 'string') {
 		answer = answer.toLowerCase();
 	}
 
-  if ( trimmedGuess.indexOf(answer) >= 0
-	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
-	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
-	    
-	    answeredCorrectly = 1;
-	    return answeredCorrectly;
-  }
-	    
+
+	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
+		congratulate();
+	}
+
+	if (trimmedGuess.indexOf(answer) >= 0) {
+		currentScore++;
+		var scoreElement = document.getElementById('currentScoreValue');
+		scoreElement.textContent = currentScore;
+
+		if (currentScore > highScore) {
+			scoreElement.classList.add('highlight');
+		}
+	}
 }
-  
+
 function congratulate(){
       currentScore++;
 	    
@@ -169,7 +164,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.59 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.60 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
