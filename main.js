@@ -39,8 +39,7 @@ function showNextProblem() {
 				var msgProblem = new SpeechSynthesisUtterance();
 				msgProblem.text = problemText;
 				// change the animated .gif to 'thinking'
-				msgProblem.onend = setUnicornThinking (event) {
-        };
+				msgProblem.onend = setUnicornThinking (event);
         window.speechSynthesis.speak(msgProblem);
       
       break;
