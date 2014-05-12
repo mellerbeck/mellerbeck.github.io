@@ -62,13 +62,19 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
-    var msg = new SpeechSynthesisUtterance('Hi Amelia!');
-    window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
-    msg.onend = setUnicornThinking();
-    window.speechSynthesis.speak(msg);
+    var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
+    window.speechSynthesis.speak(msgHi);
     
+    var msgReady = new SpeechSynthesisUtterance();
+    msgReady.text = 'Are you ready to play the unicorn math game?';
     // change the animated .gif to 'thinking'
+    msgReady.onend = function (event) {
+      document.getElementById("unicornpic").src="UnicornThinking.gif";
+    }
+    
+    window.speechSynthesis.speak(msgReady);
+    
+    
     
     
     currentScore = 0;
