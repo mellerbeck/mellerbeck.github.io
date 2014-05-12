@@ -77,7 +77,7 @@ function startSpeechRecognition() {
     
     var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msgHi);
-    var msgReady = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
+    var msgReady = new SpeechSynthesisUtterance('ready');
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
