@@ -114,8 +114,6 @@ function startSpeechRecognition() {
 	speech.start();
 }
 
-function setUnicornThinking(event) 
-
 function checkAnswer(guess) {
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
