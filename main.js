@@ -9,9 +9,6 @@ var currentProblem;
 var currentScore = 0;
 var answeredCorrectly = -1;
 var highScore = 0;
-var timerCtx = document.getElementById('cnvTimer').getContext('2d');
-var timerCanvasHeight = document.getElementById('cnvTimer').height;
-var beginTime;
 var errorOccurred = false;
 var selectedCategory = 'builtin-AmeliaAddition';
 var problemsForSelectedCategory;
@@ -64,8 +61,8 @@ function startSpeechRecognition() {
 	
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
-	speech.interimResults = true;
-	speech.lang = 'en-NZ';
+	// speech.interimResults = true;
+	speech.lang = 'en';
 	speech.onstart = function() {
 		
 		if (answeredCorrectly == -1) {
@@ -130,6 +127,10 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
 	    
 	    answeredCorrectly = 1;
+	    
+	    }
+	    
+	if (answeredCorrectly
 	    currentScore++;
 	    
 	    var scoreElement = document.getElementById('currentScoreValue');
@@ -138,9 +139,6 @@ function checkAnswer(guess) {
       if (currentScore > highScore) {
         scoreElement.classList.add('highlight');
       }
-	    
-	    console.log(trimmedGuess.indexOf(answer) + ' ') // + trimmedGuess.indexOf(altval1) + ' ' +
-	    // trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3)); 
 	    
 	    // say you're right
 	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
