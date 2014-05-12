@@ -126,9 +126,10 @@ function checkAnswer(guess) {
   if ( trimmedGuess.indexOf(answer) >= 0
 	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
 	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
-	    speech.stop();
+	    
 	    answeredCorrectly = 1;
 	    currentScore++;
+	    speech.stop();
 	    
 	    var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
@@ -155,7 +156,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.4 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.5 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
