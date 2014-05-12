@@ -88,12 +88,6 @@ function startSpeechRecognition() {
 		errorOccurred = false;
 		document.getElementById('currentScoreValue').textContent = currentScore;
 		
-		// Show the first question
-		
-		if(answeredCorrectly){
-      showNextProblem();
-		}
-		
 	};
 
   speech.onresult = function(event) {
