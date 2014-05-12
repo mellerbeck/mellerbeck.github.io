@@ -110,6 +110,7 @@ function startSpeechRecognition() {
 function checkAnswer(guess) {
 
   console.log (guess);
+  console.log (answeredCorrectly);
 
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
@@ -154,7 +155,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.1 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.2 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
