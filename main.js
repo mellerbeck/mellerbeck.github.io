@@ -61,7 +61,7 @@ function startSpeechRecognition() {
 	
 	var final_transcript = '';
 	var speech = new SpeechRecognition();
-	//speech.continuous = true;
+	speech.continuous = true;
 	speech.interimResults = true;
 	speech.lang = 'en-US';
 	speech.onstart = function() {
@@ -156,9 +156,10 @@ function congratulate(){
 	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       window.speechSynthesis.speak(msg);
 	    
-	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
-	    snd.addEventListener('ended', showNextProblem);
-      snd.play();
+	    //var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	    //snd.addEventListener('ended', showNextProblem);
+      //snd.play();
+      showNextProblem();
 }
 
 function setIHeardText(textToDisplay) {
@@ -169,7 +170,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.56 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.57 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
