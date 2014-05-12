@@ -207,8 +207,29 @@ startButton.addEventListener('click', function() {
 		return ;
 	}
   
-	startSpeechRecognition();
+	//startSpeechRecognition();
+	startAnnyang();
 });
+
+function startAnnyang() {
+  if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'test': greeting
+    }
+  };
+  
+  var greeting = function () {
+    alert("I am an alert box!");
+  }
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+  }
+}
 
 
 
