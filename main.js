@@ -68,18 +68,15 @@ function startSpeechRecognition() {
     var msgReady = new SpeechSynthesisUtterance();
     msgReady.text = 'Are you ready to play the unicorn math game?';
     // change the animated .gif to 'thinking'
-    msgReady.onend = function (event) {
-      document.getElementById("unicornpic").src="UnicornThinking.gif";
+    msgReady.onend = setUnicornThinking (event) {
     }
     
     window.speechSynthesis.speak(msgReady);
     
-    
-    
-    
     currentScore = 0;
+    scoreLoopCounter = 0;
     showNextProblem();
-		scoreLoopCounter = 0;
+		
     }
     
 		errorOccurred = false;
@@ -88,7 +85,8 @@ function startSpeechRecognition() {
 		// Show the first question
 		
 		if(currentScore !== scoreLoopCounter){
-		showNextProblem();
+      console.log('the current score is ' + currentScore + ' loop is ' + scoreLoopCounter); 
+      showNextProblem();
 		}
 		
 	};
@@ -113,7 +111,7 @@ function startSpeechRecognition() {
 	speech.start();
 }
 
-function setUnicornThinking() {
+function setUnicornThinking(event) {
   document.getElementById("unicornpic").src="UnicornThinking.gif";
 }
 
@@ -141,7 +139,8 @@ function checkAnswer(guess) {
       window.speechSynthesis.speak(msg);
       
       currentScore++;
-      scoreLoopCounter++;
+      scoreLoopCounter = currentScore + 1;
+      
       var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
 
