@@ -127,10 +127,6 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
 	    
 	    answeredCorrectly = 1;
-	    
-	    }
-	    
-	if (answeredCorrectly
 	    currentScore++;
 	    
 	    var scoreElement = document.getElementById('currentScoreValue');
