@@ -36,10 +36,14 @@ function showNextProblem() {
 				problemText = currentProblem.key;
 				msg = new SpeechSynthesisUtterance('OK, whats');
         window.speechSynthesis.speak(msg);
+        
 				var msgProblem = new SpeechSynthesisUtterance();
 				msgProblem.text = problemText;
+				
 				// change the animated .gif to 'thinking'
-				msgProblem.onend = setUnicornThinking (event);
+				msgProblem.onend = function (event) {
+          document.getElementById("unicornpic").src="UnicornThinking.gif";
+        };
         window.speechSynthesis.speak(msgProblem);
       
       break;
@@ -110,9 +114,7 @@ function startSpeechRecognition() {
 	speech.start();
 }
 
-function setUnicornThinking(event) {
-  document.getElementById("unicornpic").src="UnicornThinking.gif";
-}
+function setUnicornThinking(event) 
 
 function checkAnswer(guess) {
 	var trimmedGuess = guess.trim().toLowerCase();
