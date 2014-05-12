@@ -109,7 +109,7 @@ function startSpeechRecognition() {
 
 function checkAnswer(guess) {
 
-  console.log ('hi peeps');
+  console.log (guess);
 
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
