@@ -66,6 +66,10 @@ function startSpeechRecognition() {
     window.speechSynthesis.speak(msg);
     msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
     window.speechSynthesis.speak(msg);
+    
+    // change the animated .gif to 'thinking'
+    document.getElementById("unicorn1").src=UnicornThinking.gif;
+    
     currentScore = 0;
     showNextProblem();
 		scoreLoopCounter = 0;
