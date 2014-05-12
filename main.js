@@ -68,7 +68,7 @@ function startSpeechRecognition() {
     window.speechSynthesis.speak(msg);
     
     // change the animated .gif to 'thinking'
-    document.getElementById("unicorn1").src=UnicornThinking.gif;
+    document.getElementById("unicorn1").src="UnicornThinking.gif";
     
     currentScore = 0;
     showNextProblem();
