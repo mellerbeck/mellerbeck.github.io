@@ -152,12 +152,12 @@ function congratulate(){
       }
 	    
 	    // say you're right
-	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
-      window.speechSynthesis.speak(msg);
+	    // var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
+      // window.speechSynthesis.speak(msg);
 	    
-	    //var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
-	    //snd.addEventListener('ended', showNextProblem);
-      //snd.play();
+	    // var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	    // snd.addEventListener('ended', showNextProblem);
+      // snd.play();
       showNextProblem();
 }
 
@@ -169,7 +169,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.58 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.59 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
