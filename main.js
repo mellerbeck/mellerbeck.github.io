@@ -79,7 +79,6 @@ function startSpeechRecognition() {
     
     currentScore = 0;
     showNextProblem();
-    speech.start();
 		
     }
     
@@ -108,13 +107,15 @@ function startSpeechRecognition() {
 	// keep it listening
     speech.onend = function(){
       speech.start();
-  }
+    }
 
+	speech.start();
 }
 
 function checkAnswer(guess) {
 
   console.log (guess);
+  console.log ('you were here');
  
   var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
@@ -164,7 +165,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.52 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.53 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
