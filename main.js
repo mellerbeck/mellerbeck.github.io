@@ -7,7 +7,7 @@ var SpeechRecognition = window.mozSpeechRecognition ||
 
 var currentProblem;
 var currentScore = 0;
-var scoreLoopCounter = -1;
+var answeredCorrectly = 0;
 var highScore = 0;
 var timerCtx = document.getElementById('cnvTimer').getContext('2d');
 var timerCanvasHeight = document.getElementById('cnvTimer').height;
@@ -27,6 +27,10 @@ function getRandomInteger(ceiling) {
 }
 
 function showNextProblem() {
+
+  //set answeredCorrectly to false;
+  answeredCorrectly = 0;
+
 	var problemText;
 	var previousProblem = currentProblem;
 	while (previousProblem === currentProblem) {
@@ -87,7 +91,7 @@ function startSpeechRecognition() {
 		
 		// Show the first question
 		
-		if(currentScore !== scoreLoopCounter){
+		if(answeredCorrectly){
       console.log('the current score is ' + currentScore + ' loop is ' + scoreLoopCounter); 
       showNextProblem();
 		}
@@ -142,7 +146,7 @@ function checkAnswer(guess) {
       window.speechSynthesis.speak(msg);
       
       currentScore++;
-      scoreLoopCounter = currentScore + 1;
+      answeredCorrectly = 1;
       
       var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
