@@ -212,10 +212,12 @@ startButton.addEventListener('click', function() {
 });
 
 function startAnnyang() {
+
   if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
+   console.log("I started");
   var commands = {
-    'test': greeting
+    'say hello': greeting
     }
   };
   
