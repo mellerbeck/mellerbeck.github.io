@@ -127,28 +127,28 @@ function checkAnswer(guess) {
 
   if ( trimmedGuess.indexOf(answer) >= 0
 	    || trimmedGuess.indexOf(altval1) >= 0 || trimmedGuess.indexOf(altval2) >= 0
-	    || trimmedGuess.indexOf(altval3) >= 0) {
+	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
 	    
+	    answeredCorrectly = 1;
+	    currentScore++;
 	    
-	    console.log(trimmedGuess.indexOf(answer) + ' ') // + trimmedGuess.indexOf(altval1) + ' ' +
-	    // trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3)); 
-	    
-	    // say you're right
-	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
-	    snd.addEventListener('ended', showNextProblem);
-      snd.play();
-	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
-      window.speechSynthesis.speak(msg);
-      
-      currentScore++;
-      answeredCorrectly = 1;
-      
-      var scoreElement = document.getElementById('currentScoreValue');
+	    var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
 
       if (currentScore > highScore) {
         scoreElement.classList.add('highlight');
       }
+	    
+	    console.log(trimmedGuess.indexOf(answer) + ' ') // + trimmedGuess.indexOf(altval1) + ' ' +
+	    // trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3)); 
+	    
+	    // say you're right
+	    var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
+      window.speechSynthesis.speak(msg);
+	    
+	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	    snd.addEventListener('ended', showNextProblem);
+      snd.play();
     }
   }
 
