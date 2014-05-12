@@ -7,7 +7,7 @@ var SpeechRecognition = window.mozSpeechRecognition ||
 
 var currentProblem;
 var currentScore = 0;
-var answeredCorrectly = 0;
+var answeredCorrectly = -1;
 var highScore = 0;
 var timerCtx = document.getElementById('cnvTimer').getContext('2d');
 var timerCanvasHeight = document.getElementById('cnvTimer').height;
@@ -68,7 +68,7 @@ function startSpeechRecognition() {
 	speech.lang = 'en-NZ';
 	speech.onstart = function() {
 		
-		if (scoreLoopCounter == -1) {
+		if (answeredCorrectly == -1) {
 		document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
@@ -81,7 +81,6 @@ function startSpeechRecognition() {
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
-    scoreLoopCounter = 0;
     showNextProblem();
 		
     }
@@ -92,7 +91,6 @@ function startSpeechRecognition() {
 		// Show the first question
 		
 		if(answeredCorrectly){
-      console.log('the current score is ' + currentScore + ' loop is ' + scoreLoopCounter); 
       showNextProblem();
 		}
 		
