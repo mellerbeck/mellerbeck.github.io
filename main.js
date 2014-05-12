@@ -155,7 +155,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.63 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.64 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -214,23 +214,17 @@ startButton.addEventListener('click', function() {
 function startAnnyang() {
 
   if (annyang) {
-  // Let's define our first command. First the text we expect, and then the function it should call
-   console.log("I started");
+  // Let's define a command.
   var commands = {
-    'say hello': greeting
-    }
+    'show tps report': function() { $('#tpsreport').show(); }
   };
-  
-  var greeting = function () {
-    console.log("you suck");
-    alert("I am an alert box!");
-  }
 
   // Add our commands to annyang
   annyang.addCommands(commands);
 
-  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  // Start listening.
   annyang.start();
+  }
 }
 
 
