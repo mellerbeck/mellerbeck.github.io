@@ -59,6 +59,7 @@ function showNextProblem() {
 
 function startSpeechRecognition() {
 	
+	var final_transcript = '';
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
 	speech.interimResults = true;
@@ -88,15 +89,18 @@ function startSpeechRecognition() {
 	};
 
   speech.onresult = function(event) {
-		var iHeard = '';
-
-		for (var i = event.resultIndex; i < event.results.length; i++) {
-			if (!event.results[i].isFinal) {
-				iHeard += event.results[i][0].transcript;
-			}
-		}
-		setIHeardText(iHeard);
-		answeredCorrectly = checkAnswer(iHeard);
+    var interim_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+        } else {
+          interim_transcript += event.results[i][0].transcript;
+        }
+    }
+    
+    setIHeardText(interim_transcript);
+		answeredCorrectly = checkAnswer(final_transcript);
+		
 		if (answeredCorrectly) {
 		speech.stop();
 		congratulate();
@@ -165,7 +169,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.53 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.55 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
