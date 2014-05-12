@@ -132,7 +132,7 @@ function checkAnswer(guess) {
 	    
 	    
 	    console.log (trimmedGuess.indexOf(answer) + ' ' + trimmedGuess.indexOf(altval1) + ' ' +
-	    trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3); 
+	    trimmedGuess.indexOf(altval2) ' ' + trimmedGuess.indexOf(altval3)); 
 	    
 	    // say you're right
 	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
