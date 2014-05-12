@@ -65,7 +65,7 @@ function startSpeechRecognition() {
     var msg = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msg);
     msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
-    msg.addEventListener('onend', setUnicornThinking);
+    msg.onend = setUnicornThinking();
     window.speechSynthesis.speak(msg);
     
     // change the animated .gif to 'thinking'
