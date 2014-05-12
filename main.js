@@ -17,8 +17,6 @@ var selectedCategory = 'builtin-AmeliaAddition';
 var problemsForSelectedCategory;
 var selectedLanguage = navigator.language;
 
-
-
 function getQuestionFromList(theList) {
 	var index = getRandomInteger(theList.length) - 1;
 	return theList[index];
@@ -66,15 +64,14 @@ function startSpeechRecognition() {
 		document.getElementById('secondInstructions').style.display = '';
     var msg = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msg);
-    msg = new SpeechSynthesisUtterance('Are you ready to play the crazy crazy crazy math game?');
+    msg = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
     window.speechSynthesis.speak(msg);
-    
+    currentScore = 0;
     showNextProblem();
 		scoreLoopCounter = 0;
     }
     
 		errorOccurred = false;
-		currentScore = 0;
 		document.getElementById('currentScoreValue').textContent = currentScore;
 		
 		// Show the first question
