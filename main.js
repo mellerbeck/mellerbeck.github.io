@@ -220,6 +220,7 @@ function startAnnyang() {
   };
   
   var greeting = function () {
+    console.log("you suck");
     alert("I am an alert box!");
   }
 
