@@ -111,6 +111,9 @@ function startSpeechRecognition() {
 }
 
 function checkAnswer(guess) {
+
+  console.log ('hi peeps');
+
 	var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
 	// add a couple of alternative answers to help out children
