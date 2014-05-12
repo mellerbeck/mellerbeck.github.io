@@ -96,7 +96,12 @@ function startSpeechRecognition() {
 			}
 		}
 		setIHeardText(iHeard);
-		checkAnswer(iHeard);
+		answeredCorrectly = checkAnswer(iHeard);
+		if (answeredCorrectly) {
+		speech.stop();
+		congratulate();
+		}
+		
 	};
 	
 	// keep it listening
@@ -110,9 +115,8 @@ function startSpeechRecognition() {
 function checkAnswer(guess) {
 
   console.log (guess);
-  console.log (answeredCorrectly);
-
-	var trimmedGuess = guess.trim().toLowerCase();
+ 
+  var trimmedGuess = guess.trim().toLowerCase();
 	var answer = currentProblem.value;
 	// add a couple of alternative answers to help out children
 	// with unclear speech
@@ -128,8 +132,13 @@ function checkAnswer(guess) {
 	    || trimmedGuess.indexOf(altval3) >= 0 && answeredCorrectly == 0) {
 	    
 	    answeredCorrectly = 1;
-	    currentScore++;
-	    speech.stop();
+	    return answeredCorrectly;
+  }
+	    
+}
+  
+function congratulate(){
+      currentScore++;
 	    
 	    var scoreElement = document.getElementById('currentScoreValue');
       scoreElement.textContent = currentScore;
@@ -145,8 +154,7 @@ function checkAnswer(guess) {
 	    var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
 	    snd.addEventListener('ended', showNextProblem);
       snd.play();
-    }
-  }
+}
 
 function setIHeardText(textToDisplay) {
 	document.getElementById('iHeardText').textContent = textToDisplay;
@@ -156,7 +164,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.5 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.51 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
