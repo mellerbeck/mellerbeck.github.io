@@ -120,9 +120,8 @@ function checkAnswer(guess) {
 		answer = answer.toLowerCase();
 	}
 
-
-	if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
-		congratulate();
+  if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
+		showNextProblem();
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0) {
@@ -137,15 +136,7 @@ function checkAnswer(guess) {
 }
 
 function congratulate(){
-      currentScore++;
-	    
-	    var scoreElement = document.getElementById('currentScoreValue');
-      scoreElement.textContent = currentScore;
-
-      if (currentScore > highScore) {
-        scoreElement.classList.add('highlight');
-      }
-	    
+      
 	    // say you're right
 	    // var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
       // window.speechSynthesis.speak(msg);
@@ -153,7 +144,7 @@ function congratulate(){
 	    // var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
 	    // snd.addEventListener('ended', showNextProblem);
       // snd.play();
-      showNextProblem();
+      
 }
 
 function setIHeardText(textToDisplay) {
@@ -164,7 +155,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.60 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.61 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
