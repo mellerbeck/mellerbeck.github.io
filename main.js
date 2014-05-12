@@ -67,11 +67,10 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
+    
     var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msgHi);
-    
-    var msgReady = new SpeechSynthesisUtterance();
-    msgReady.text = 'Are you ready to play the unicorn math game?';
+    var msgReady = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game?');
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
