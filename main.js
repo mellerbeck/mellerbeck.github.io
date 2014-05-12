@@ -61,7 +61,7 @@ function startSpeechRecognition() {
 	
 	var speech = new SpeechRecognition();
 	speech.continuous = true;
-	// speech.interimResults = true;
+	speech.interimResults = true;
 	speech.lang = 'en-US';
 	speech.onstart = function() {
 		
@@ -155,7 +155,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.2 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.3 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
