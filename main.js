@@ -73,7 +73,7 @@ function startSpeechRecognition() {
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
     
-    var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
+    var msgHi = new SpeechSynthesisUtterance('Hi Abigail!');
     window.speechSynthesis.speak(msgHi);
     var msgReady = new SpeechSynthesisUtterance('ready to play');
     window.speechSynthesis.speak(msgReady);
@@ -156,7 +156,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.68 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.69 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -241,7 +241,7 @@ if (answeredCorrectly == -1) {
         }
         
         var two = function() {
-          checkAnswer(two)
+          checkAnswer(2)
         }
         
         var commands = {
