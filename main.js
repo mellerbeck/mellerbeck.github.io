@@ -156,7 +156,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.66 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.67 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -213,6 +213,27 @@ startButton.addEventListener('click', function() {
 });
 
 function startAnnyang() {
+
+if (answeredCorrectly == -1) {
+		document.getElementsByClassName('scores')[0].classList.remove('hidden');
+		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
+		document.getElementsByClassName('card')[0].classList.remove('hidden');
+		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
+		document.getElementById('secondInstructions').style.display = '';
+    
+    var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
+    window.speechSynthesis.speak(msgHi);
+    var msgReady = new SpeechSynthesisUtterance('ready to play');
+    window.speechSynthesis.speak(msgReady);
+    
+    currentScore = 0;
+    showNextProblem();
+		
+    }
+    
+		document.getElementById('currentScoreValue').textContent = currentScore;
+
+
   if (annyang) {
   
         var greeting = function() {
@@ -220,12 +241,12 @@ function startAnnyang() {
         }
         
         var one = function() {
-          alert('one');
+          checkAnswer(two)
         }
         
         var commands = {
             'Hello': greeting,
-            'one': one,
+            'two': two,
         };
         
         
