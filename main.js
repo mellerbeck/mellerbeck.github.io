@@ -86,7 +86,7 @@ function congratulate(){
   // get a random number to choose celebration image
   var rndnum = getRandomInteger(5);
   
-  // change the animated .gif to 'fireworks!'
+  // change the animated .gif to 'celebration!'
 	document.getElementById("unicornpic").src="images/celebrate" + rndnum + ".gif";
 	
 	var msg = new SpeechSynthesisUtterance();
@@ -114,7 +114,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.81 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.82 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
