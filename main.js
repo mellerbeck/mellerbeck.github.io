@@ -35,17 +35,17 @@ function showNextProblem() {
 			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
-				//msg = new SpeechSynthesisUtterance('OK, whats');
-        //window.speechSynthesis.speak(msg);
+				msg = new SpeechSynthesisUtterance('OK, whats');
+        window.speechSynthesis.speak(msg);
         
-				//var msgProblem = new SpeechSynthesisUtterance();
-				//msgProblem.text = problemText;
+				var msgProblem = new SpeechSynthesisUtterance();
+				msgProblem.text = problemText;
 				
 				// change the animated .gif to 'thinking'
-				//msgProblem.onend = function (event) {
-        //  document.getElementById("unicornpic").src="UnicornThinking.gif";
-        //};
-        //window.speechSynthesis.speak(msgProblem);
+				msgProblem.onend = function (event) {
+          document.getElementById("unicornpic").src="UnicornThinking.gif";
+        };
+        window.speechSynthesis.speak(msgProblem);
       
       break;
 			default:
@@ -75,7 +75,7 @@ function startSpeechRecognition() {
     
     var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msgHi);
-    var msgReady = new SpeechSynthesisUtterance('ready');
+    var msgReady = new SpeechSynthesisUtterance('ready to play');
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
@@ -122,6 +122,7 @@ function checkAnswer(guess) {
 
   if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
 		showNextProblem();
+		congratulate();
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0) {
@@ -137,13 +138,13 @@ function checkAnswer(guess) {
 
 function congratulate(){
       
-	    // say you're right
-	    // var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
-      // window.speechSynthesis.speak(msg);
+	     say you're right
+	     var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
+       window.speechSynthesis.speak(msg);
 	    
-	    // var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
-	    // snd.addEventListener('ended', showNextProblem);
-      // snd.play();
+	     var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	     snd.addEventListener('ended', showNextProblem);
+       snd.play();
       
 }
 
@@ -207,8 +208,8 @@ startButton.addEventListener('click', function() {
 		return ;
 	}
   
-	//startSpeechRecognition();
-	startAnnyang();
+	startSpeechRecognition();
+	//startAnnyang();
 });
 
 function startAnnyang() {
