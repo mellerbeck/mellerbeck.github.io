@@ -221,7 +221,7 @@ if (answeredCorrectly == -1) {
 		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
     
-    var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
+    var msgHi = new SpeechSynthesisUtterance('Hi Abigail!');
     window.speechSynthesis.speak(msgHi);
     var msgReady = new SpeechSynthesisUtterance('ready to play');
     window.speechSynthesis.speak(msgReady);
