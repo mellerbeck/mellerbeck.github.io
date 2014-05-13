@@ -138,7 +138,7 @@ function checkAnswer(guess) {
 
 function congratulate(){
       
-	     say you're right
+	     // say you're right
 	     var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
        window.speechSynthesis.speak(msg);
 	    
