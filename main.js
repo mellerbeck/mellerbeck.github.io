@@ -92,8 +92,6 @@ function congratulate(){
 	var msg = new SpeechSynthesisUtterance();
 	msg.text = 'Awesome! you got it right!';
 	
-	document.getElementById("unicornpic").src="";
-				
 	// change the animated .gif to 'thinking'
 	msg.onend = function (event) {
     document.getElementById("unicornpic").src="UnicornAnimate.gif";
@@ -116,7 +114,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.80 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.81 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
