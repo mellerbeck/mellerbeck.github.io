@@ -156,7 +156,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.65 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.66 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -214,13 +214,21 @@ startButton.addEventListener('click', function() {
 
 function startAnnyang() {
   if (annyang) {
-        var commands = {
-            'Hello': greeting
-        };
-        
+  
         var greeting = function() {
           alert('Hi! I can hear you.');
         }
+        
+        var one = function() {
+          alert('one');
+        }
+        
+        var commands = {
+            'Hello': greeting,
+            'one': one,
+        };
+        
+        
         annyang.addCommands(commands);
         
         annyang.start(); 
