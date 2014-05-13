@@ -241,7 +241,7 @@ if (answeredCorrectly == -1) {
         }
         
         var goseven = function() {
-          alert('two');
+          checkAnswer(2);
         }
         
         var commands = {
