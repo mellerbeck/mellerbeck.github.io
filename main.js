@@ -207,8 +207,8 @@ startButton.addEventListener('click', function() {
 		return ;
 	}
   
-	//startSpeechRecognition();
-	startAnnyang();
+    startAnnyang();
+    
 });
 
 function startAnnyang() {
@@ -233,40 +233,33 @@ if (answeredCorrectly == -1) {
 		document.getElementById('currentScoreValue').textContent = currentScore;
 
 
-  if (annyang) {
+      if (annyang) {
   
-        var gotwo = function() {
-          alert('two'); 
-          checkAnswer('2');
-        }
-        
-        var gothree = function() {
-          alert('three'); 
-          checkAnswer('3');
-        }
-        
-        var gofour = function() {
-          alert('four'); 
-          checkAnswer('4');
-        }
-        
-        var gofive = function() {
-          alert('five'); 
-          checkAnswer('5');
-        }
-        
-  
-        var greeting = function() {
-          alert('Hi! I can hear you.');
-        }
-        
-        var goseven = function() {
-          alert('seven.'); 
-          checkAnswer('2');
-        }
+				var gotwo = function() {
+					checkAnswer('2');
+				}
+						
+				var gothree = function() {
+					checkAnswer('3');
+				}
+						
+				var gofour = function() {
+					checkAnswer('4');
+				}
+						
+				var gofive = function() {
+					checkAnswer('5');
+				}
+				
+				var gosix = function() {
+					checkAnswer('6');
+				}
+				
+				var goseven = function() {
+							checkAnswer('2');
+				}
         
         var commands = {
-            'Hello': greeting,
             '2': gotwo,
             'two': gotwo,
             '3': gothree,
@@ -275,13 +268,13 @@ if (answeredCorrectly == -1) {
             'four': gofour,
             '5': gofive,
             'five': gofive,
+            '6': gofive,
+            'six': gosix,
             '7': goseven,
             'seven': goseven,
         };
         
-        
         annyang.addCommands(commands);
-        
         annyang.start(); 
     }
 }
