@@ -114,16 +114,15 @@ function startSpeechRecognition() {
 
 function checkAnswer(guess) {
   console.log(guess);
-	var trimmedGuess = guess.trim().toLowerCase();
+	var trimmedGuess = guess;
 	var answer = currentProblem.value;
-	var altval1 = currentProblem.altval1;
+	
 	if (typeof answer === 'string') {
 		answer = answer.toLowerCase();
 	}
 
-  if (/skip|next question/gi.test(guess) || trimmedGuess.indexOf(answer) >= 0) {
-		showNextProblem();
-		congratulate();
+  if (trimmedGuess.indexOf(answer) >= 0) {
+    congratulate();
 	}
 
 	if (trimmedGuess.indexOf(answer) >= 0) {
@@ -145,8 +144,7 @@ function congratulate(){
 	    
 	     var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
 	     snd.addEventListener('ended', showNextProblem);
-       snd.play();
-      
+       snd.play();     
 }
 
 function setIHeardText(textToDisplay) {
