@@ -82,6 +82,11 @@ function checkAnswer(guess) {
 }
 
 function congratulate(){
+
+  // change the animated .gif to 'fireworks!'
+				msgProblem.onend = function (event) {
+          document.getElementById("unicornpic").src="images/fireworks-1.gif";
+        };
       
 	// say you're right
 	var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
@@ -100,7 +105,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.76 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.77 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
