@@ -208,25 +208,21 @@ startButton.addEventListener('click', function() {
 		return ;
 	}
   
-	startSpeechRecognition();
-	//startAnnyang();
+	//startSpeechRecognition();
+	startAnnyang();
 });
 
 function startAnnyang() {
-
   if (annyang) {
-  // Let's define a command.
-  var commands = {
-    'show tps report': function() { $('#tpsreport').show(); }
-  };
-
-  // Add our commands to annyang
-  annyang.addCommands(commands);
-
-  // Start listening.
-  annyang.debug();d
-  annyang.start();
-  }
+        var commands = {
+            'Hello': function() {
+                alert('Hi! I can hear you.');
+            }
+        };
+        annyang.addCommands(commands);
+        annyang.debug();
+        annyang.start(); 
+    }
 }
 
 
