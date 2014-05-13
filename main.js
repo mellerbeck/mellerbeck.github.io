@@ -156,7 +156,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.67 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.68 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -240,7 +240,7 @@ if (answeredCorrectly == -1) {
           alert('Hi! I can hear you.');
         }
         
-        var one = function() {
+        var two = function() {
           checkAnswer(two)
         }
         
