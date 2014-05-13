@@ -243,7 +243,7 @@ if (answeredCorrectly == -1) {
         
         var goseven = function() {
           alert('seven.'); 
-          checkAnswer(2);
+          checkAnswer('2');
         }
         
         var commands = {
