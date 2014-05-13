@@ -57,61 +57,6 @@ function showNextProblem() {
 	document.getElementsByClassName('problem')[0].textContent = problemText;
 }
 
-function startSpeechRecognition() {
-	
-	var final_transcript = '';
-	var speech = new SpeechRecognition();
-	speech.continuous = true;
-	speech.interimResults = true;
-	speech.lang = 'en-US';
-	speech.onstart = function() {
-		
-		if (answeredCorrectly == -1) {
-		document.getElementsByClassName('scores')[0].classList.remove('hidden');
-		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
-		document.getElementsByClassName('card')[0].classList.remove('hidden');
-		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
-		document.getElementById('secondInstructions').style.display = '';
-    
-    var msgHi = new SpeechSynthesisUtterance('Hi Abigail!');
-    window.speechSynthesis.speak(msgHi);
-    var msgReady = new SpeechSynthesisUtterance('ready to play');
-    window.speechSynthesis.speak(msgReady);
-    
-    currentScore = 0;
-    showNextProblem();
-		
-    }
-    
-		errorOccurred = false;
-		document.getElementById('currentScoreValue').textContent = currentScore;
-		
-	};
-
-  speech.onresult = function(event) {
-    var interim_transcript = '';
-    for (var i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
-        } else {
-        interim_transcript += event.results[i][0].transcript;
-        }
-    }
-    
-    setIHeardText(interim_transcript);
-		checkAnswer(final_transcript);
-		
-	};
-	
-	// keep it listening
-    speech.onend = function(){
-      speech.start();
-    }
-
-	speech.start();
-}
-
-
 function checkAnswer(guess) {
   console.log(guess);
 	var trimmedGuess = guess;
@@ -138,13 +83,13 @@ function checkAnswer(guess) {
 
 function congratulate(){
       
-	     // say you're right
-	     var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
-       window.speechSynthesis.speak(msg);
-	    
-	     var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
-	     snd.addEventListener('ended', showNextProblem);
-       snd.play();     
+	// say you're right
+	var msg = new SpeechSynthesisUtterance('Awesome! you got it right!');
+	window.speechSynthesis.speak(msg);
+
+	var snd = new Audio("audio/applause.mp3"); // buffers automatically when created
+	snd.addEventListener('ended', showNextProblem);
+	snd.play();     
 }
 
 function setIHeardText(textToDisplay) {
@@ -155,7 +100,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.74 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.75 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -176,8 +121,6 @@ function detectIfVoiceSynthesSupported() {
 	}	
 }
 
-
-
 function switchToSecondInstructions() {
 	var first = document.getElementById('firstInstructions');
 	if (first.style.display !== 'none') {
@@ -189,8 +132,6 @@ function switchToSecondInstructions() {
 detectIfSpeechSupported();
 detectIfVoiceSynthesSupported(); 
 common.renderCategories();
-
-
 
 setTimeout(function() {
 	document.getElementsByClassName('leftArrow')[0].style['margin-left'] ='0';
@@ -217,7 +158,6 @@ if (answeredCorrectly == -1) {
 		document.getElementsByClassName('scores')[0].classList.remove('hidden');
 		document.getElementsByClassName('unicorn')[0].classList.remove('hidden');
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
-		document.getElementsByClassName('iHeard')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
     
     var msgHi = new SpeechSynthesisUtterance('Hi Abigail!');
@@ -232,8 +172,7 @@ if (answeredCorrectly == -1) {
     
 		document.getElementById('currentScoreValue').textContent = currentScore;
 
-
-      if (annyang) {
+    if (annyang) {
   
 				var gotwo = function() {
 					checkAnswer('2');
