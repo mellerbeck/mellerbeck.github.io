@@ -82,9 +82,12 @@ function checkAnswer(guess) {
 }
 
 function congratulate(){
-
+  
+  // get a random number to choose celebration image
+  var rndnum = getRandomInteger(5);
+  
   // change the animated .gif to 'fireworks!'
-	document.getElementById("unicornpic").src="images/fireworks-1.gif";
+	document.getElementById("unicornpic").src="images/celebrate" + rndnum + ".gif";
         
       
 	// say you're right
