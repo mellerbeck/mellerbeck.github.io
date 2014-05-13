@@ -237,6 +237,27 @@ if (answeredCorrectly == -1) {
 
   if (annyang) {
   
+        var gotwo = function() {
+          alert('two'); 
+          checkAnswer('2');
+        }
+        
+        var gothree = function() {
+          alert('three'); 
+          checkAnswer('3');
+        }
+        
+        var gofour = function() {
+          alert('four'); 
+          checkAnswer('4');
+        }
+        
+        var gofive = function() {
+          alert('five'); 
+          checkAnswer('5');
+        }
+        
+  
         var greeting = function() {
           alert('Hi! I can hear you.');
         }
@@ -248,6 +269,14 @@ if (answeredCorrectly == -1) {
         
         var commands = {
             'Hello': greeting,
+            '2': gotwo,
+            'two': gotwo,
+            '3': gothree,
+            'three': gothree,
+            '4': gofour,
+            'four': gofour,
+            '5': gofive,
+            'five': gofive,
             '7': goseven,
             'seven': goseven,
         };
