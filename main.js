@@ -100,7 +100,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.75 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.76 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -160,9 +160,9 @@ if (answeredCorrectly == -1) {
 		document.getElementsByClassName('card')[0].classList.remove('hidden');
 		document.getElementById('secondInstructions').style.display = '';
     
-    var msgHi = new SpeechSynthesisUtterance('Hi Abigail!');
+    var msgHi = new SpeechSynthesisUtterance('Hi Amelia!');
     window.speechSynthesis.speak(msgHi);
-    var msgReady = new SpeechSynthesisUtterance('ready to play');
+    var msgReady = new SpeechSynthesisUtterance('Are you ready to play the unicorn math game');
     window.speechSynthesis.speak(msgReady);
     
     currentScore = 0;
