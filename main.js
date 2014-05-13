@@ -215,12 +215,14 @@ startButton.addEventListener('click', function() {
 function startAnnyang() {
   if (annyang) {
         var commands = {
-            'Hello': function() {
-                alert('Hi! I can hear you.');
-            }
+            'Hello': greeting
         };
+        
+        var greeting = function() {
+          alert('Hi! I can hear you.');
+        }
         annyang.addCommands(commands);
-        annyang.debug();
+        
         annyang.start(); 
     }
 }
