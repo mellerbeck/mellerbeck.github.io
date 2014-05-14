@@ -72,7 +72,7 @@ function checkAnswer(guess) {
 
   if (trimmedGuess.indexOf(answer) >= 0) {
     congratulate();
-  else {
+  }  else {
     
     msg = new SpeechSynthesisUtterance('please try again');
     window.speechSynthesis.speak(msg);
