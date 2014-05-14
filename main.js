@@ -72,7 +72,12 @@ function checkAnswer(guess) {
 
   if (trimmedGuess.indexOf(answer) >= 0) {
     congratulate();
-	}
+  else {
+    
+    msg = new SpeechSynthesisUtterance('please try again');
+    window.speechSynthesis.speak(msg);
+  
+  }
 
 	if (trimmedGuess.indexOf(answer) >= 0) {
 		currentScore++;
@@ -112,7 +117,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.83 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.84 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
