@@ -100,6 +100,7 @@ function congratulate(){
 	
 	var msg = new SpeechSynthesisUtterance();
 	msg.text = 'Awesome! you got it right!';
+	window.speechSynthesis.speak(msg);
 	
 	// another random number to choose celebration sound
   rndnum = getRandomInteger(5);
@@ -117,7 +118,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.84 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.85 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
@@ -212,7 +213,7 @@ if (answeredCorrectly == -1) {
 				}
 				
 				var goseven = function() {
-							checkAnswer('2');
+					checkAnswer('7');
 				}
         
         var commands = {
