@@ -35,7 +35,11 @@ function showNextProblem() {
 			case 'builtin-AmeliaAddition':
 				currentProblem = getQuestionFromList(samples.AmeliaAddition);
 				problemText = currentProblem.key;
-				msg = new SpeechSynthesisUtterance('OK, whats');
+				
+				// change the animated .gif to 'talking'
+        document.getElementById("unicornpic").src="UnicornAnimate.gif";
+  
+ 				msg = new SpeechSynthesisUtterance('OK, whats');
         window.speechSynthesis.speak(msg);
         
 				var msgProblem = new SpeechSynthesisUtterance();
@@ -92,12 +96,6 @@ function congratulate(){
 	var msg = new SpeechSynthesisUtterance();
 	msg.text = 'Awesome! you got it right!';
 	
-	// change the animated .gif to 'thinking'
-	msg.onend = function (event) {
-    document.getElementById("unicornpic").src="UnicornAnimate.gif";
-  };
-  window.speechSynthesis.speak(msg);
-	
 	// another random number to choose celebration sound
   rndnum = getRandomInteger(5);
 
@@ -114,7 +112,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.82 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.83 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
