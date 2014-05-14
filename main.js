@@ -83,10 +83,6 @@ function checkAnswer(guess) {
 		currentScore++;
 		var scoreElement = document.getElementById('currentScoreValue');
 		scoreElement.textContent = currentScore;
-
-		if (currentScore > highScore) {
-			scoreElement.classList.add('highlight');
-		}
 	}
 }
 
@@ -118,7 +114,7 @@ function detectIfSpeechSupported() {
 	var supportMessage;
 	var warningsElement = document.getElementsByClassName('warnings')[0];
 	if (SpeechRecognition) {
-		supportMessage = "1.86 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
+		supportMessage = "1.87 Cool!  Your browser supports speech recognition & Speech Synthesis Have fun!";
 	}
 	else {
 		warningsElement.classList.add('unsupported');
