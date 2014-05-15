@@ -12,7 +12,8 @@ After the page loads, Click 'Amelia Addition' and then the Start Button
 
 It will ask a question using speech synthesis. Answer the question i.e. what is 2 + 2
 
-Say 4. If you get it correct it will let you know and then give you your next question.
+Answer 4. If you get it correct it will let you know with a picture and audio notification
+and then give you your next question.
 
 
 
