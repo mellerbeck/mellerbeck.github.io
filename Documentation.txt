@@ -1,0 +1,13 @@
+Michael L Ellerbeck
+CS50 Final Project
+
+Using the Chrome webbrowser version 34 for speech recognition and speech synthesis to teach simple addition.
+
+Target audience: my 5 year old daughter :)
+
+How to use: Direct your webbrowser to https://mellerbeck.github.io/ (the https: 
+is important, it allows you to answer the security question only once to allow chrome to access your microphone)
+
+
+
+ 
