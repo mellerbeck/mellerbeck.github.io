@@ -1,12 +1,18 @@
 Michael L Ellerbeck
 CS50 Final Project
 
-Using the Chrome webbrowser version 34 for speech recognition and speech synthesis to teach simple addition.
+Using Chrome webbrowser version 34 for speech recognition and speech synthesis to teach simple addition.
 
 Target audience: my 5 year old daughter :)
 
 How to use: Direct your webbrowser to https://mellerbeck.github.io/ (the https: 
 is important, it allows you to answer the security question only once to allow chrome to access your microphone)
+
+After the page loads, Click 'Amelia Addition' and then the Start Button
+
+It will ask a question using speech synthesis. Answer the question i.e. what is 2 + 2
+
+Say 4. If you get it correct it will let you know and then give you your next question.
 
 
 
