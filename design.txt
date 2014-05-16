@@ -20,7 +20,19 @@ Eventually I moved away from the implementation of voice recognition inside bran
 I replaced it with annyang created by Tal Ater. This was almost a drop in replacement.
 Using the javascript's library was nice it had code to handle the timeout of the camera, 
 it would only restart if it was closed automatically. Plus it would not slam the browser
-with restarts, it would only restart once a second. Using the library it recognition
+with restarts, it would only restart once a second. Using the library the recognition
 was improved.
+
+Once voice recognition was working I started experimenting with speech synthesis. Once that started working
+I wanted the timing of things to work out so I had to figure out the callback for the onend. When the
+speech stopped I wanted the picture to change. I used some simple animated .gifs and then used javascript
+document.getElementById("label").src=" to change the source image. Next I had to figure out how to play
+some sounds. Same as with the speech synthesis I wanted to wait until the sound was done playing until
+the next problem would display so I used the snd.addEventListener('ended', dosomething); to catch
+the ended event.
+
+All in all it was a fun project, I got to learn more about Git, html, CSS, javascript, the speech recognition API and 
+speech synthesis.
+
 
    
