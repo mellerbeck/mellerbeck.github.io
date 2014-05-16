@@ -1,0 +1,26 @@
+Michael L Ellerbeck
+CS50 Final Project
+
+I thought it would be fun to experiment with voice recognition. Early on I ran into 
+http://iambrandonn.github.io/FlashCards/ this was an excellent starting point!
+
+I got a GitHub account and then copied everything over. GitHub is pretty cool
+you can create a project with your username.github.io and then GitHub will host it for you!
+
+So I read through Brandon's code, the last assignment on CSS\HTML\javascript was very useful
+to trying to understand it. I removed some of the code that wasn't going to 
+be needed for my simple implementation.
+
+I read a lot about the google chrome voice recognition and people were compaining that the 
+microphone would turn off at about 7 seconds if you didn't say anything. I ran into this
+problem as well. The solution was to use https (so it wouldn't ask for access again to the
+microphone) and then on the onend event restart the microphone. This worked sortof ok
+
+Eventually I moved away from the implementation of voice recognition inside brandon's version.
+I replaced it with annyang created by Tal Ater. This was almost a drop in replacement.
+Using the javascript's library was nice it had code to handle the timeout of the camera, 
+it would only restart if it was closed automatically. Plus it would not slam the browser
+with restarts, it would only restart once a second. Using the library it recognition
+was improved.
+
+   
